@@ -1,4 +1,4 @@
-/*! tether 0.5.2 */
+/*! tether 0.4.8 */
 (function() {
   var Evented, addClass, defer, deferred, extend, flush, getBounds, getOffsetParent, getOrigin, getScrollParent, hasClass, node, removeClass, uniqueId, updateClasses, zeroPosCache,
     __hasProp = {}.hasOwnProperty,
@@ -92,12 +92,6 @@
     origin = getOrigin(doc);
     box.top -= origin.top;
     box.left -= origin.left;
-    if (box.width == null) {
-      box.width = document.body.scrollWidth - box.left - box.right;
-    }
-    if (box.height == null) {
-      box.height = document.body.scrollHeight - box.top - box.bottom;
-    }
     box.top = box.top - docEl.clientTop;
     box.left = box.left - docEl.clientLeft;
     box.right = doc.body.clientWidth - box.width - box.left;
@@ -360,7 +354,7 @@
       position();
       return lastDuration = now() - lastCall;
     };
-    _ref1 = ['resize', 'scroll', 'touchmove'];
+    _ref1 = ['resize', 'scroll'];
     _results = [];
     for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
       event = _ref1[_i];
@@ -611,7 +605,7 @@
             if (this.target !== document.body) {
               out.height = Math.max(out.height, 24);
             }
-            scrollPercentage = this.target.scrollTop / (target.scrollHeight - height);
+            scrollPercentage = target.scrollTop / (target.scrollHeight - height);
             out.top = scrollPercentage * (height - out.height - fitAdj) + bounds.top + parseFloat(style.borderTopWidth);
             if (this.target === document.body) {
               out.height = Math.max(out.height, 24);
@@ -810,10 +804,10 @@
         elementStyle = getComputedStyle(this.element);
         offsetParentSize = offsetPosition;
         offsetBorder = {};
-        _ref4 = ['Top', 'Left', 'Bottom', 'Right'];
+        _ref4 = ['top', 'left', 'bottom', 'right'];
         for (_j = 0, _len1 = _ref4.length; _j < _len1; _j++) {
           side = _ref4[_j];
-          offsetBorder[side.toLowerCase()] = parseFloat(offsetParentStyle["border" + side + "Width"]);
+          offsetBorder[side] = parseFloat(offsetParentStyle["border-" + side + "-width"]);
         }
         offsetPosition.right = document.body.scrollWidth - offsetPosition.left - offsetParentSize.width + offsetBorder.right;
         offsetPosition.bottom = document.body.scrollHeight - offsetPosition.top - offsetParentSize.height + offsetBorder.bottom;
@@ -997,11 +991,10 @@
       to = [pos.left, pos.top, size.width + pos.left, size.height + pos.top];
       for (i = _i = 0, _len = BOUNDS_FORMAT.length; _i < _len; i = ++_i) {
         side = BOUNDS_FORMAT[i];
-        side = side[0].toUpperCase() + side.substr(1);
-        if (side === 'Top' || side === 'Left') {
-          to[i] += parseFloat(style["border" + side + "Width"]);
+        if (side === 'top' || side === 'left') {
+          to[i] += parseFloat(style["border-" + side + "-width"]);
         } else {
-          to[i] -= parseFloat(style["border" + side + "Width"]);
+          to[i] -= parseFloat(style["border-" + side + "-width"]);
         }
       }
     }

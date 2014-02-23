@@ -52,7 +52,7 @@ do ->
 
     lastDuration = now() - lastCall
     
-  for event in ['resize', 'scroll', 'touchmove']
+  for event in ['resize', 'scroll']
     window.addEventListener event, tick
 
 MIRROR_LR =
@@ -259,7 +259,7 @@ class _Tether
           if @target isnt document.body
             out.height = Math.max out.height, 24
 
-          scrollPercentage = @target.scrollTop / (target.scrollHeight - height)
+          scrollPercentage = target.scrollTop / (target.scrollHeight - height)
           out.top = scrollPercentage * (height - out.height - fitAdj) + bounds.top + parseFloat(style.borderTopWidth)
 
           if @target is document.body
@@ -414,8 +414,8 @@ class _Tether
       offsetParentSize = offsetPosition
 
       offsetBorder = {}
-      for side in ['Top', 'Left', 'Bottom', 'Right']
-        offsetBorder[side.toLowerCase()] = parseFloat offsetParentStyle["border#{ side }Width"]
+      for side in ['top', 'left', 'bottom', 'right']
+        offsetBorder[side] = parseFloat offsetParentStyle["border-#{ side }-width"]
 
       offsetPosition.right = document.body.scrollWidth - offsetPosition.left - offsetParentSize.width + offsetBorder.right
       offsetPosition.bottom = document.body.scrollHeight - offsetPosition.top - offsetParentSize.height + offsetBorder.bottom

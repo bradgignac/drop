@@ -1,4 +1,4 @@
-<script src="tether.js"></script>
+<script src="/tether/tether.js"></script>
 <script src="js/markAttachment.js"></script>
 <script src="docs/js/intro.js"></script>
 <link rel="stylesheet" href="docs/css/intro.css"></link>
@@ -17,20 +17,10 @@ exceedes those constraints it can be pinned to the edge, flip to the other
 side of it's target, or hide itself.
 
 Tether optimizes it's location placement to result in the minimum amount of
-'jankyness' as the page is scrolled and resized.  The page can maintain 60fps
-scrolling even with dozens or hundreds of tethers on screen (pop open the
-devtools timeline as you scroll this page).
+'jankyness' as the page is scrolled and resized.
 
 Tether is 5kb minified and gzipped, and supports IE9+, and all modern
 browsers.
-
-<h2 class="projects-header">Projects Built With Tether</h2>
-<p class="projects-paragraph">
-<a href="http://github.hubspot.com/select/docs/welcome"><span>Select</span><img src="http://github.hubspot.com/os-icons/select-icon.png" /></a>
-<a href="http://github.hubspot.com/drop/docs/welcome"><span>Drop</span><img src="http://github.hubspot.com/os-icons/drop-icon.png" /></a>
-<a href="http://github.hubspot.com/tooltip/docs/welcome"><span>Tooltip</span><img src="http://github.hubspot.com/os-icons/tooltip-icon.png" /></a>
-<a href="http://github.hubspot.com/shepherd/docs/welcome"><span>Shepherd</span><img src="http://github.hubspot.com/os-icons/shepherd-icon.png" /></a>
-</p>
 
 Usage
 -----

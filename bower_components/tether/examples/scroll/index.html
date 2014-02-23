@@ -2,7 +2,6 @@
 <html>
     <head>
         <link rel="stylesheet" href="../resources/css/base.css" />
-        <link rel="stylesheet" href="../common/css/style.css" />
     </head>
     <body>
 
@@ -872,12 +871,21 @@
         .pointer.show {
           opacity: 1;
         }
+
+        .instructions {
+          width: 100%;
+          text-align: center;
+          font-size: 24px;
+          padding: 15px;
+          background-color: rgba(210, 180, 140, 0.4);
+          margin: -15px -15px 0 -15px;
+        }
       </style>
 
 
       <div class="pointer"></div>
 
-      <script src="../../tether.js"></script>
+      <script src="/tether/tether.js"></script>
       <script>
         new Tether({
           element: '.pointer',

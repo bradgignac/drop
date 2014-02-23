@@ -1,4 +1,8 @@
 (function() {
+  var $;
+
+  $ = jQuery;
+
   Tether.modules.push({
     initialize: function() {
       var dot, el, type, _i, _len, _ref, _results;

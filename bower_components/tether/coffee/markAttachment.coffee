@@ -1,3 +1,5 @@
+$ = jQuery
+
 Tether.modules.push
   initialize: ->
     @markers = {}

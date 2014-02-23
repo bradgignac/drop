@@ -7,13 +7,29 @@ body {
     background-color: #fe8;
     position: absolute;
     z-index: 6;
+    border: 30px solid grey;
+}
+.element.tether-element-attached-bottom {
+    border-bottom-color: black;
+}
+.element.tether-element-attached-top {
+    border-top-color: black;
 }
 
 .target {
     width: 300px;
     height: 50px;
+    width: 30%;
     margin: 0 35%;
     background-color: #4e9;
+    border: 10px solid transparent;
+}
+
+.target.tether-target-attached-bottom {
+    border-bottom-color: black;
+}
+.target.tether-target-attached-top {
+    border-top-color: black;
 }
 
 .container {
@@ -25,11 +41,13 @@ body {
 }
 
 body {
-    padding: 15px;
+    height: 1000px;
 }
 
 body > .container {
-    margin: 0 auto;
+    position: absolute;
+    left: 600px;
+    top: 0;
 }
 
 .pad {
@@ -37,12 +55,6 @@ body > .container {
     width: 100px;
 }
 
-.instructions {
-    width: 100%;
-    text-align: center;
-    font-size: 24px;
-    padding: 15px;
-    background-color: rgba(210, 180, 140, 0.4);
-    margin: -15px -15px 0 -15px;
+.tether-out-of-bounds.element {
+    -display: none;
 }
-
